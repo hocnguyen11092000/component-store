@@ -65,11 +65,11 @@ export class ShowHelperWarningComponent implements OnInit, AfterContentInit {
     | TemplateRef<{ $implicit: AbstractControl | NgModel }>
     | null = null;
 
-  ngOnInit(): void {
-    this.cdr.markForCheck();
-  }
+  ngOnInit(): void {}
 
   ngAfterContentInit(): void {
+    console.log(this.defaultValidateControl);
+
     if (this.defaultValidateControl instanceof FormControlName) {
       this.validateControl = this.defaultValidateControl
         .control as AbstractControlWarn;
